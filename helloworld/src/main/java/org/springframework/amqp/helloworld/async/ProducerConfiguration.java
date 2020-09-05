@@ -53,6 +53,7 @@ public class ProducerConfiguration {
 		@Scheduled(fixedRate = 3000)
 		public void sendMessage() {
 			rabbitTemplate.convertAndSend("Hello World " + counter.incrementAndGet());
+			System.out.println("Sent:"+counter.get());
 		}
 	}
 
